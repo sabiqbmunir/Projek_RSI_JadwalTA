@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* Design system global untuk aplikasi Penjadwalan Tugas Akhir */
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-tab: #e8ecff;
+  --color-brand: #0284c7;
+  --color-brand-dark: #0369a1;
+}
+
+:root {
+  font-family: "Plus Jakarta Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  @apply bg-slate-50 font-sans text-slate-900 antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Latar gradasi biru lembut untuk halaman registrasi */
+@utility bg-soft-glow {
+  background-image:
+    radial-gradient(520px 360px at 0% 18%, rgba(14, 165, 233, 0.1), transparent 70%),
+    radial-gradient(520px 420px at 100% 70%, rgba(14, 165, 233, 0.09), transparent 70%);
+}
+
+/* Komponen halaman autentikasi */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at center, #ffffff 0%, #f7f9fc 58%, #f4f7fa 100%);
+}
+
+.auth-navbar {
+  height: 60px;
+  flex: 0 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 0 32px;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.auth-card {
+  width: min(447px, 100%);
+  padding: 48px 40px 38px;
+  background: #fff;
+  border: 1px solid #e2eaf3;
+  border-radius: 17px;
+  box-shadow: 0 12px 30px rgba(28, 55, 90, 0.08);
+}
+
+.auth-footer {
+  height: 49px;
+  flex: 0 0 49px;
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid #e0e7ef;
+}
+
+@media (max-width: 520px) {
+  .auth-navbar {
+    height: 56px;
+    flex-basis: 56px;
+    padding: 0 18px;
+  }
+
+  .auth-main {
+    padding: 28px 16px;
+  }
+
+  .auth-card {
+    padding: 36px 24px 30px;
+    border-radius: 15px;
+  }
+
+  .auth-footer {
+    height: 28px;
+    flex-basis: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

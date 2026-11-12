@@ -1,0 +1,36 @@
+# ========================================================
+# Git Ignore - Root Repository Penjadwalan TA
+# ========================================================
+
+# 1. DEPENDENCIES (Sangat Besar - Dilarang Push)
+node_modules/
+*/node_modules/
+package-lock.json
+
+# 2. SENSITIVE CREDENTIALS & SECRETS (Wajib Disembunyikan)
+.env
+.env.*
+!.env.example
+*.env
+backend/.env
+frontend/.env
+
+# 3. BUILD OUTPUTS
+dist/
+build/
+*/dist/
+*/build/
+
+# 4. LOGS & DEBUG
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 5. OS & IDE CONFIGURATIONS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.user

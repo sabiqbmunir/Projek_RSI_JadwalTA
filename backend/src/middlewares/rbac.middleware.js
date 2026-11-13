@@ -45,7 +45,43 @@ function requireRole(allowedRoles) {
     };
 }
 
+/**
+ * Middleware RBAC untuk membatasi fungsionalitas sistem:
+ * Membatasi agar fungsional di luar Login, Registrasi, dan Profil Mahasiswa tidak dapat diakses.
+ */
+function restrictFeatureAccess(req, res, next) {
+    return errorResponse(
+        res,
+        'Akses fitur dibatasi oleh kebijakan RBAC',
+        ['Sistem saat ini dibatasi: hanya fungsionalitas Login, Registrasi, dan Profil Mahasiswa yang diizinkan.'],
+        403,
+        'ERR-RBAC-RESTRICTED'
+    );
+}
+
+/**
+ * Middleware RBAC memastikan hanya peran Mahasiswa (User) yang diizinkan mengakses
+ */
+function requireMahasiswa(req, res, next) {
+    if (!req.user) {
+        return errorResponse(res, 'Anda harus login terlebih dahulu', [], 401, 'ERR-AUTH-01');
+    }
+    const role = normalizeRole(req.user.role);
+    if (role !== 'User') {
+        return errorResponse(
+            res,
+            'Akses ditolak: Dashboard hanya dapat diakses oleh Mahasiswa',
+            [`Peran '${role}' tidak diizinkan mengakses area mahasiswa`],
+            403,
+            'ERR-RBAC-NOT-MAHASISWA'
+        );
+    }
+    next();
+}
+
 module.exports = {
     normalizeRole,
-    requireRole
+    requireRole,
+    restrictFeatureAccess,
+    requireMahasiswa
 };

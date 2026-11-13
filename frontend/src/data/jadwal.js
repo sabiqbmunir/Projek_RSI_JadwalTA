@@ -1,0 +1,90 @@
+// Data jadwal ujian Seminar Proposal dan Sidang TA
+export const seminarProposal = [
+  {
+    tanggal: "2026-11-20",
+    nama: "M. Sabiq Badrul Munir",
+    nim: "L0225036",
+    penguji: ["Dr. Budi Santoso, M.Kom.", "Bambang Widoyono, M.T."],
+    jamMulai: "09:00",
+    jamSelesai: "10:30",
+    ruang: "Ruang Sidang 1",
+  },
+  {
+    tanggal: "2026-11-21",
+    nama: "Rafa Khrisna Daneshwara",
+    nim: "M0521088",
+    penguji: ["Dr. Siti Aminah, M.T.", "Dr. Budi Santoso, M.Kom."],
+    jamMulai: "10:30",
+    jamSelesai: "12:00",
+    ruang: "Ruang Sidang 2",
+  },
+  {
+    tanggal: "2026-11-22",
+    nama: "Ahmad Fauzi",
+    nim: "M0521099",
+    penguji: ["Prof. Ir. Joko Supriyanto, Ph.D.", "Bambang Widoyono, M.T."],
+    jamMulai: "13:00",
+    jamSelesai: "14:30",
+    ruang: "Ruang Sidang 1",
+  },
+  {
+    tanggal: "2026-11-23",
+    nama: "Dewi Sartika",
+    nim: "M0521012",
+    penguji: ["Dr. Siti Aminah, M.T.", "Prof. Ir. Joko Supriyanto, Ph.D."],
+    jamMulai: "08:30",
+    jamSelesai: "10:00",
+    ruang: "Ruang Sidang 3",
+  },
+  {
+    tanggal: "2026-11-24",
+    nama: "Farhan Maulana",
+    nim: "L0225042",
+    penguji: ["Dr. Eng. Irwan Santosa, M.T.", "Dr. Budi Santoso, M.Kom."],
+    jamMulai: "10:00",
+    jamSelesai: "11:30",
+    ruang: "Ruang Sidang 2",
+  },
+];
+
+export const sidangTA = [
+  {
+    tanggal: "2026-12-15",
+    nama: "Rafa Khrisna Daneshwara",
+    nim: "M0521088",
+    penguji: [
+      "Dr. Budi Santoso, M.Kom. (Ketua)",
+      "Dr. Siti Aminah, M.T.",
+      "Bambang Widoyono, M.T.",
+    ],
+    jamMulai: "13:30",
+    jamSelesai: "15:00",
+    ruang: "Ruang Sidang Utama",
+  },
+  {
+    tanggal: "2026-12-16",
+    nama: "M. Sabiq Badrul Munir",
+    nim: "L0225036",
+    penguji: [
+      "Dr. Siti Aminah, M.T. (Ketua)",
+      "Prof. Ir. Joko Supriyanto, Ph.D.",
+      "Dr. Eng. Irwan Santosa, M.T.",
+    ],
+    jamMulai: "09:00",
+    jamSelesai: "10:30",
+    ruang: "Ruang Sidang Utama",
+  },
+  {
+    tanggal: "2026-12-17",
+    nama: "Dewi Sartika",
+    nim: "M0521012",
+    penguji: [
+      "Bambang Widoyono, M.T. (Ketua)",
+      "Dr. Budi Santoso, M.Kom.",
+      "Dr. Siti Aminah, M.T.",
+    ],
+    jamMulai: "10:30",
+    jamSelesai: "12:00",
+    ruang: "Ruang Sidang 1",
+  },
+];

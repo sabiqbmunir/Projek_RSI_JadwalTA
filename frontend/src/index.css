@@ -6,6 +6,26 @@
   --color-tab: #e8ecff;
   --color-brand: #0284c7;
   --color-brand-dark: #0369a1;
+  --color-brand-logo: #1e40af;
+  --color-brand-navy: #1e3a8a;
+  --color-brand-primary: #0587c8;
+  --color-brand-light: #0ea5e9;
+  --color-brand-active: #45cbf2;
+  --color-brand-active-alt: #2ecbec;
+  --color-brand-from: #38b6f9;
+  --color-brand-to: #1197dc;
+  --color-brand-avatar: #0a87d3;
+  --color-brand-yellow: #fdd03b;
+  --color-brand-50: #e0f2fe;
+  --color-brand-400: #2f9fe8;
+  --color-brand-500: #0ea5e9;
+  --color-brand-700: #0587c8;
+  --color-brand-900: #1e3a8a;
+  --color-page: #eff3f8;
+  --color-surface: #f0f4f9;
+  --color-ink: #0f172a;
+  --color-muted: #8a9bb0;
+  --color-line: #dbe3ee;
 }
 
 :root {
@@ -129,3 +149,59 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Dashboard Mahasiswa Style Utilities */
+.hero-gradient {
+  background: linear-gradient(135deg, #38b6f9 0%, #1197dc 100%);
+}
+
+.shadow-hero {
+  box-shadow: 0 12px 28px rgba(17, 151, 220, 0.25);
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 14px rgb(15 23 42 / 0.04);
+}
+
+.btn-primary-shadow {
+  box-shadow: 0 10px 18px -8px rgb(5 135 200 / 0.55);
+}
+
+.btn-shadow {
+  box-shadow: 0 10px 20px -8px rgba(5, 135, 201, 0.45);
+}
+
+.dropzone {
+  border: 2px dashed #94a3b8;
+  background: #f8fafc;
+  border-radius: 14px;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.dropzone[data-dragging="true"] {
+  border-color: #0ea5e9;
+  background: #f0f9ff;
+}
+
+.info-box {
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  background-color: #ffffff;
+  padding: 1rem 1.25rem;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8a9bb0;
+}
+
+.info-value {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+

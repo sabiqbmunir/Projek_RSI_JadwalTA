@@ -17,6 +17,7 @@ import {
   ChevronRight,
   Send,
   Shield,
+  ShieldAlert,
   BookOpen,
   Upload,
   Download,
@@ -24,6 +25,7 @@ import {
   Check
 } from "lucide-react";
 import { authApi, tokenStorage } from "../api/auth.js";
+import MahasiswaDashboard from "../components/mahasiswa/MahasiswaDashboard.jsx";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -188,6 +190,45 @@ export default function Dashboard() {
   const isRoleAdminTA = displayRole.includes("superadmin") || displayRole.includes("admin_dosen_ta") || (currentUser.user_type === "admin");
   const isRoleDosen = !isRoleAdminTA && (displayRole.includes("dosen") || displayRole === "admin");
   const isRoleMahasiswa = !isRoleAdminTA && !isRoleDosen;
+
+  // Jika login sebagai Mahasiswa, gunakan layout modern sesuai desain
+  if (isRoleMahasiswa) {
+    return (
+      <MahasiswaDashboard
+        currentUser={currentUser}
+        handleLogout={handleLogout}
+        actionNotice={actionNotice}
+        notify={notify}
+      />
+    );
+  }
+
+  // Jika BUKAN Mahasiswa (misal Dosen atau Admin), batasi akses dashboard sesuai kebijakan RBAC
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#eff3f8] p-6 font-sans">
+      <div className="max-w-md w-full bg-white rounded-2xl border border-slate-200/90 p-8 text-center shadow-lg">
+        <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto mb-4">
+          <ShieldAlert size={30} />
+        </div>
+        <h2 className="text-xl font-bold text-slate-900 mb-2">Akses Dibatasi (RBAC)</h2>
+        <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+          Sistem saat ini dibatasi oleh kebijakan <em>Role-Based Access Control</em> (RBAC): program hanya diizinkan untuk menampilkan{" "}
+          <strong>Dashboard Mahasiswa</strong>. Akun Anda terdeteksi memiliki peran{" "}
+          <span className="font-semibold text-slate-800">
+            "{currentUser.peran || currentUser.role || "Non-Mahasiswa"}"
+          </span>
+          .
+        </p>
+        <button
+          onClick={handleLogout}
+          className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold text-sm shadow-sm transition"
+        >
+          <LogOut size={16} />
+          <span>Keluar & Masuk Sebagai Mahasiswa</span>
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="flex h-screen bg-slate-100 font-sans text-slate-800">
